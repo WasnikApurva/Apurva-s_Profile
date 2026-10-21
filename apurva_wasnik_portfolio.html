@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Apurva Wasnik — Power BI Developer and Data Analyst specializing in analytics, SQL and business intelligence." />
+  <meta name="theme-color" content="#f7f9fc" />
+  <title>Apurva Wasnik | Power BI & Data Analytics Portfolio</title>
+  <style>
+    :root {
+      --bg: #f7f9fc; --panel: #ffffff; --panel-2: #eef3fb;
+      --text: #172033; --muted: #5e6b82; --line: rgba(35,55,85,.14);
+      --accent: #2563eb; --accent-2: #14b8a6; --shadow: 0 18px 45px rgba(35,55,85,.09);
+      --radius: 20px; --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text); background:
+        radial-gradient(ellipse at 15% 0%, rgba(37,99,235,.08), transparent 34%),
+        radial-gradient(ellipse at 90% 12%, rgba(20,184,166,.07), transparent 28%), var(--bg);
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-wrap { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(16px); background: rgba(255,255,255,.88); border-bottom: 1px solid var(--line); }
+    nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { font-weight: 800; letter-spacing: -.04em; font-size: 1.05rem; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 22px; color: var(--muted); font-size: .92rem; }
+    .nav-links a:hover, .text-link:hover { color: var(--accent); }
+    .menu-toggle { display: none; background: transparent; border: 1px solid var(--line); color: var(--text); padding: 8px 12px; border-radius: 10px; }
+    .hero { padding: 92px 0 72px; display: grid; grid-template-columns: 1.4fr .8fr; gap: 48px; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; padding: 7px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--accent); font-size: .83rem; font-weight: 700; background: rgba(37,99,235,.05); }
+    .pulse { width: 7px; height: 7px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 5px rgba(37,99,235,.10); }
+    h1 { font-size: clamp(2.7rem, 6vw, 5rem); line-height: 1.04; letter-spacing: -.065em; margin: 22px 0; }
+    h1 .gradient { background: linear-gradient(100deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero p { color: var(--muted); font-size: 1.1rem; max-width: 650px; margin: 0; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn { display: inline-flex; justify-content: center; align-items: center; gap: 9px; padding: 12px 17px; border-radius: 12px; font-weight: 750; border: 1px solid var(--line); transition: transform .2s, border-color .2s; }
+    .btn:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .btn.primary { color: #ffffff; background: var(--accent); border-color: transparent; }
+    .hero-card { padding: 26px; border: 1px solid var(--line); border-radius: 26px; background: linear-gradient(145deg, rgba(255,255,255,.98), rgba(244,247,252,.95)); box-shadow: var(--shadow); position: relative; overflow: hidden; }
+    .hero-card::before { content: ""; position: absolute; width: 180px; height: 180px; border-radius: 50%; background: rgba(37,99,235,.07); top: -75px; right: -65px; }
+    .monogram { display: grid; place-items: center; width: 76px; height: 76px; border-radius: 22px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #ffffff; font-size: 1.6rem; font-weight: 900; letter-spacing: -.06em; margin-bottom: 22px; }
+    .hero-card h2 { margin: 0 0 4px; font-size: 1.25rem; }
+    .hero-card .role { color: var(--muted); font-size: .94rem; margin-bottom: 20px; }
+    .mini-stat { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid var(--line); }
+    .mini-stat strong { color: var(--accent); }
+    section { padding: 58px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 26px; }
+    .kicker { color: var(--accent); font-size: .78rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    h2.section-title { font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -.045em; line-height: 1.15; margin: 8px 0 0; }
+    .section-desc { color: var(--muted); max-width: 540px; margin: 0; }
+    .grid { display: grid; gap: 18px; }
+    .stats { grid-template-columns: repeat(3, 1fr); }
+    .stat, .card, .skill-group, .timeline-item, .contact-card { background: rgba(255,255,255,.92); border: 1px solid var(--line); border-radius: var(--radius); }
+    .stat { padding: 22px; }
+    .stat strong { display: block; font-size: 2rem; letter-spacing: -.05em; color: var(--accent); line-height: 1.2; }
+    .stat span { display: block; color: var(--muted); margin-top: 8px; font-size: .92rem; }
+    .projects { grid-template-columns: repeat(2, 1fr); }
+    .card { padding: 24px; transition: transform .2s, border-color .2s; }
+    .card:hover { transform: translateY(-4px); border-color: rgba(37,99,235,.35); }
+    .card-top { display: flex; justify-content: space-between; gap: 12px; align-items: start; }
+    .project-icon { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 14px; background: rgba(37,99,235,.09); font-size: 1.3rem; }
+    .tag { display: inline-flex; border: 1px solid var(--line); color: var(--muted); border-radius: 999px; padding: 4px 9px; font-size: .75rem; white-space: nowrap; }
+    .card h3 { font-size: 1.15rem; margin: 18px 0 8px; }
+    .card p { color: var(--muted); margin: 0 0 16px; font-size: .95rem; }
+    .chips { display: flex; flex-wrap: wrap; gap: 7px; }
+    .chip { color: #34445f; background: rgba(37,99,235,.06); border: 1px solid rgba(37,99,235,.15); padding: 5px 9px; border-radius: 8px; font-size: .78rem; }
+    .note { margin-top: 20px; color: var(--muted); font-size: .88rem; padding: 14px 16px; border-left: 3px solid var(--accent-2); background: rgba(37,99,235,.05); border-radius: 0 10px 10px 0; }
+    .skills { grid-template-columns: repeat(3, 1fr); }
+    .skill-group { padding: 22px; }
+    .skill-group h3 { margin: 0 0 14px; font-size: 1rem; }
+    .skill-group .chips { gap: 8px; }
+    .timeline { display: grid; gap: 14px; }
+    .timeline-item { padding: 22px 24px; display: grid; grid-template-columns: 190px 1fr; gap: 22px; }
+    .timeline-date { color: var(--accent); font-size: .86rem; font-weight: 750; }
+    .timeline-item h3 { margin: 0 0 3px; font-size: 1.08rem; }
+    .timeline-item .company { color: var(--muted); font-size: .9rem; margin-bottom: 10px; }
+    .timeline-item ul { margin: 0; padding-left: 19px; color: var(--muted); font-size: .92rem; }
+    .timeline-item li + li { margin-top: 5px; }
+    .education { grid-template-columns: repeat(2, 1fr); }
+    .contact { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: stretch; }
+    .contact-card { padding: 26px; }
+    .contact-card p { color: var(--muted); }
+    .contact-links { display: grid; gap: 10px; }
+    .contact-links a { display: flex; justify-content: space-between; gap: 10px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; color: var(--muted); overflow-wrap: anywhere; }
+    .contact-links a:hover { border-color: var(--accent); color: var(--text); }
+    footer { border-top: 1px solid var(--line); padding: 25px 0; color: var(--muted); font-size: .85rem; }
+    footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .text-link { color: var(--accent); font-weight: 700; }
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; padding-top: 62px; gap: 30px; }
+      .hero-card { max-width: 560px; }
+      .skills { grid-template-columns: repeat(2, 1fr); }
+      .timeline-item { grid-template-columns: 1fr; gap: 6px; }
+      .nav-links { display: none; position: absolute; top: 72px; left: 0; right: 0; padding: 18px 20px 22px; background: #ffffff; border-bottom: 1px solid var(--line); flex-direction: column; align-items: start; }
+      .nav-links.open { display: flex; }
+      .menu-toggle { display: block; }
+    }
+    @media (max-width: 560px) {
+      .container { width: min(100% - 28px, var(--max)); }
+      .stats, .projects, .skills, .education, .contact { grid-template-columns: 1fr; }
+      section { padding: 42px 0; }
+      .section-head { align-items: start; flex-direction: column; }
+      .card, .skill-group, .contact-card { padding: 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <div class="nav-wrap">
+    <nav class="container" aria-label="Main navigation">
+      <a class="brand" href="#home">Apurva Wasnik<span>.</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a>
+        <a href="#experience">Experience</a><a href="#education">Education</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+    <header class="container hero" id="home">
+      <div>
+        <div class="eyebrow"><span class="pulse"></span> POWER BI · DATA ANALYTICS</div>
+        <h1>Hi, I'm Apurva.<br /><span class="gradient">I turn data into insights.</span></h1>
+        <p>
+          Power BI Developer and Data Analyst with 4+ years of experience in business intelligence, data modeling and reporting. I build reliable dashboards, optimize data workflows and turn complex data into actionable insights.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore my work <span aria-hidden="true">↘</span></a>
+          <a class="btn" href="#contact">Add LinkedIn URL</a>
+          <!-- Add your GitHub username below and replace YOUR_GITHUB_USERNAME in the URL. -->
+          <a class="btn" href="#contact">Add GitHub URL</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Profile summary">
+        <div class="monogram" aria-hidden="true">AW</div>
+        <h2>Apurva Wasnik</h2>
+        <div class="role">Power BI Developer · Pune, India</div>
+        <div class="mini-stat"><span>Professional experience</span><strong>4+ yrs</strong></div>
+        <div class="mini-stat"><span>Dashboards delivered</span><strong>12+</strong></div>
+        <div class="mini-stat"><span>Core focus</span><strong>BI + SQL</strong></div>
+      </aside>
+    </header>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="kicker">About me</div><h2 class="section-title">Analytics with a business mindset.</h2></div>
+          <p class="section-desc">I connect business requirements with trusted data models, clear reporting and actionable insights.</p>
+        </div>
+        <div class="grid stats">
+          <div class="stat"><strong>4+</strong><span>Years of experience in data analytics and business intelligence.</span></div>
+          <div class="stat"><strong>12+</strong><span>Dashboards delivered to support business reporting and decisions.</span></div>
+          <div class="stat"><strong>60–70%</strong><span>Reduction in manual reporting effort through automation.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="kicker">Selected work</div><h2 class="section-title">Projects & solutions</h2></div>
+          <p class="section-desc">Selected dashboard and reporting work from my professional experience. Project descriptions are kept high-level to respect employer confidentiality.</p>
+        </div>
+        <div class="grid projects">
+          <article class="card">
+            <div class="card-top"><div class="project-icon" aria-hidden="true">📊</div><span class="tag">Business Intelligence</span></div>
+            <h3>Contract Delivery Extract Dashboard</h3>
+            <p>Power BI reporting solution supporting contract delivery analysis and clear stakeholder visibility.</p>
+            <div class="chips"><span class="chip">Power BI</span><span class="chip">Data Visualization</span><span class="chip">Reporting</span></div>
+          </article>
+          <article class="card">
+            <div class="card-top"><div class="project-icon" aria-hidden="true">⚙️</div><span class="tag">Excel Automation</span></div>
+            <h3>TBMS Short-Term Offer Dashboard</h3>
+            <p>Improved dashboard performance by optimizing data retrieval and DAX, reducing refresh time from around 40 minutes to 20–25 minutes.</p>
+            <div class="chips"><span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">Performance tuning</span></div>
+          </article>
+          <article class="card">
+            <div class="card-top"><div class="project-icon" aria-hidden="true">🤖</div><span class="tag">RPA</span></div>
+            <h3>Feedback Summary Dashboard</h3>
+            <p>Power BI report presenting feedback data in a clear, structured format for business review.</p>
+            <div class="chips"><span class="chip">Power BI</span><span class="chip">Data visualization</span><span class="chip">Reporting</span></div>
+          </article>
+          <article class="card">
+            <div class="card-top"><div class="project-icon" aria-hidden="true">🧾</div><span class="tag">Finance Automation</span></div>
+            <h3>Global Special Cargo Report</h3>
+            <p>Reporting solution designed to provide visibility into global special cargo performance and related business metrics.</p>
+            <div class="chips"><span class="chip">Power BI</span><span class="chip">SQL</span><span class="chip">Data modeling</span></div>
+          </article>
+          <article class="card">
+            <div class="card-top"><div class="project-icon" aria-hidden="true">🔄</div><span class="tag">Workflow Automation</span></div>
+            <h3>Area Pulse Monitor Dashboard</h3>
+            <p>Dashboard to help stakeholders monitor area-level performance and identify key reporting trends.</p>
+            <div class="chips"><span class="chip">Power BI</span><span class="chip">Power Automate</span><span class="chip">SharePoint</span></div>
+          </article>
+          <article class="card">
+            <div class="card-top"><div class="project-icon" aria-hidden="true">☁️</div><span class="tag">Data Workflow</span></div>
+            <h3>Online Solution Cockpit MVP</h3>
+            <p>Business intelligence MVP combining data modeling and visual reporting to support operational analysis.</p>
+            <div class="chips"><span class="chip">Power BI</span><span class="chip">SharePoint</span><span class="chip">Excel</span></div>
+          </article>
+        </div>
+        <div class="note">Confidentiality note: keep employer data, internal screenshots, credentials, and proprietary code out of public repositories. Use synthetic sample data for demonstrations.</div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="kicker">Toolkit</div><h2 class="section-title">Skills & technologies</h2></div>
+          <p class="section-desc">Tools and capabilities used across dashboard development, data preparation and analytics.</p>
+        </div>
+        <div class="grid skills">
+          <div class="skill-group"><h3>Data & Reporting</h3><div class="chips"><span class="chip">Power BI Desktop & Service</span><span class="chip">DAX</span><span class="chip">Data visualization</span><span class="chip">Time intelligence</span></div></div>
+          <div class="skill-group"><h3>Automation</h3><div class="chips"><span class="chip">Power Query (M)</span><span class="chip">Power Automate</span><span class="chip">Incremental refresh</span><span class="chip">Gateways</span></div></div>
+          <div class="skill-group"><h3>Analysis & Productivity</h3><div class="chips"><span class="chip">Advanced Excel</span><span class="chip">SQL</span><span class="chip">Data validation</span><span class="chip">Query optimization</span></div></div>
+          <div class="skill-group"><h3>Business Collaboration</h3><div class="chips"><span class="chip">Requirements gathering</span><span class="chip">Stakeholder management</span><span class="chip">Agile / Jira</span><span class="chip">Mentoring</span></div></div>
+          <div class="skill-group"><h3>Learning / Developing</h3><div class="chips"><span class="chip">Snowflake (familiarity)</span><span class="chip">Python (learning)</span><span class="chip">Semantic models</span></div></div>
+          <div class="skill-group"><h3>Tools & Platforms</h3><div class="chips"><span class="chip">SQL Server</span><span class="chip">Tabular Editor</span><span class="chip">DAX Studio</span><span class="chip">SAP / MS Dynamics</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="kicker">Career</div><h2 class="section-title">Professional experience</h2></div>
+          <p class="section-desc">Experience focused on Power BI development, data analytics, reporting and business intelligence.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">Sep 2026 – Present</div>
+            <div><h3>Power BI / Data Analytics Professional</h3><div class="company">AMS · India</div><ul><li>Develop and support Power BI dashboards and reporting solutions.</li><li>Work with data models, DAX, Power Query and stakeholder requirements.</li><li>Support report validation, workspace activities and ongoing BI improvements.</li></ul></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Apr 2024 – Mar 2026</div>
+            <div><h3>Financial Analyst / Power BI Developer</h3><div class="company">Maersk Global Service Center · Pune, India</div><ul><li>Built and maintained Power BI dashboards for business reporting and analysis.</li><li>Optimized SQL queries, DAX measures and data models to improve report performance.</li><li>Collaborated with stakeholders to gather requirements, validate data and deliver reporting solutions.</li></ul></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Selected projects</div>
+            <div><h3>Power BI Dashboard Development</h3><div class="company">Business Intelligence & Analytics</div><ul><li>Delivered dashboards across operational and commercial reporting use cases.</li><li>Applied star-schema modeling, DAX measures and Power Query transformations.</li><li>Used performance-analysis tools to troubleshoot and optimize semantic models.</li></ul></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Aug 2022 – Jan 2023</div>
+            <div><h3>Additional experience</h3><div class="company">Earlier professional experience</div><ul><li>Experience in data reporting, coordination and customer/stakeholder communication.</li><li>Used Excel to organize information, prepare reports and support business operations.</li></ul></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Earlier experience</div>
+            <div><h3>Additional experience</h3><div class="company">Business Operations</div><ul><li>Supported tracking, reporting and coordination across business operations.</li><li>Worked with internal teams and customers to resolve queries and maintain information.</li></ul></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Earlier experience</div>
+            <div><h3>Customer Relations</h3><div class="company">HDFC Sales</div><ul><li>Supported customer queries, team coordination and Excel-based reporting.</li></ul></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Education</div><h2 class="section-title">Education & development</h2></div></div>
+        <div class="grid education">
+          <div class="card"><span class="tag">2015</span><h3>B.E. – Computer Science</h3><p>RTM Nagpur University</p></div>
+          <div class="card"><span class="tag">2012</span><h3>Professional development</h3><p>Power BI, SQL, data modeling and analytics</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Get in touch</div><h2 class="section-title">Let's build something useful.</h2></div></div>
+        <div class="contact">
+          <div class="contact-card">
+            <h3>Open to opportunities</h3>
+            <p>Interested in Power BI Developer, Data Analyst and Business Intelligence opportunities.</p>
+            <a class="btn primary" href="#contact">Add email address ↗</a>
+          </div>
+          <div class="contact-card contact-links">
+            <a href="mailto:YOUR_EMAIL@example.com"><span>Email (add your address)</span><strong>↗</strong></a>
+            <a href="#contact" rel="noopener noreferrer"><span>LinkedIn profile</span><strong>↗</strong></a>
+            <a href="#contact" rel="noopener noreferrer"><span>GitHub profile (add your URL)</span><strong>↗</strong></a>
+            <a href="#home"><span>Back to top</span><strong>↑</strong></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container"><span>© <span id="year"></span> Apurva Wasnik</span><span>Built with HTML, CSS & a focus on data-driven decisions.</span></div></footer>
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
